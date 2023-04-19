@@ -1,0 +1,23 @@
+﻿@model TodoViewModel
+
+<table>
+    <thead>
+        <tr>
+            <th scope = "col">Id</th>
+            <th scope = "col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TodoList)
+        {
+            <tr>
+                <td class="todos-column" scope="row">@item.Id</td>
+                <td class="todos-column">@item.Name</td>
+                <td class="buttons-column">
+                    <input type="submit" value="Delete" onClick="deleteTodo(@item.Id)"/>
+                    <input type="submit" value="Update" onClick="populateForm(@item.Id)"/>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>
